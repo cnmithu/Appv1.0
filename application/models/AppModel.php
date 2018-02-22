@@ -13,15 +13,15 @@
  */
 class AppModel extends CI_Model {
 
-    //put your code here
+    public $str;
+
     function __construct() {
         parent::__construct();
+        $this->str = file_get_contents(base_url('db.json'));
     }
 
     function getMoiveList() {
-        $str = file_get_contents(base_url('db.json'));
-        return json_decode($str);
+        return json_decode($this->str);
     }
-
    
 }
