@@ -8,16 +8,21 @@
         <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" type="text/css" >
         <link rel="stylesheet" href="<?php echo base_url('assets/css/app.css'); ?>" type="text/css" >
 
-        <title>Movies Collection</title>
+        <title><?php echo $title; ?></title>
     </head>
     <body>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <h1 class="display-4"><a href="<?php echo base_url(); ?>">Movies Collection</a></h1>
+                <h1 class="display-4">Movies Collection</h1>
                 <p class="lead">Global Gaming – Application Challenge v1.0 </p>
             </div>
         </div>
-        
+        <div class="container">
+            <?php echo $contain; ?>
+
+            
+
+        </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="<?php echo base_url('assets/js/jquery.min.js'); ?>"></script>

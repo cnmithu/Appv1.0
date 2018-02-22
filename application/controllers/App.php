@@ -19,13 +19,16 @@ class App extends CI_Controller {
         $this->load->model('AppModel');
     }
 
+    //put your code here
     public function index() {
         $data = [];
+        $data['title'] = "Home page";
         $json = $this->AppModel->getMoiveList();
         $data['genres'] = $json->genres;
         $data['contain'] = $this->load->view('home.php', $data, TRUE);
         $this->load->view('index', $data);
     }
+
     function pagination($page) {
         $data = [];
         $this->load->library("pagination");
@@ -35,7 +38,7 @@ class App extends CI_Controller {
         $moviesList = $json->movies;
         $keys = array_keys($moviesList);
         $flag = false;
-        /* Perform for filter movielist */
+        /* Start perform for filter movielist */
         if (!empty($searchText)) {
             $flag = true;
             $searchText = preg_quote(strtolower($searchText), '~');
@@ -124,8 +127,12 @@ class App extends CI_Controller {
         echo json_encode($output);
     }
 
-
-
-   
+    function movieDetail($id) {
+        $data = [];
+        $data['title'] = "Movie details page";
+        $data['movieDetails'] = $this->AppModel->getMoiveListByid($id);
+        $data['contain'] = $this->load->view('details.php', $data, TRUE);
+        $this->load->view('index', $data);
+    }
 
 }

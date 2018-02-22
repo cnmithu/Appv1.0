@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     load_movie_data(1);
     function getSearchData() {
@@ -42,13 +41,10 @@ $(document).ready(function () {
         load_movie_data(1, searchData[0], searchData[1]);
 
     });
-
-   
     $(document).on('change', '#genre', function () {
         searchData = getSearchData();
         load_movie_data(1, searchData[0], searchData[1]);
 
     });
- 
 
 });

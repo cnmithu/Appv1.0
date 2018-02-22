@@ -13,6 +13,7 @@
  */
 class AppModel extends CI_Model {
 
+    //put your code here
     public $str;
 
     function __construct() {
@@ -23,5 +24,14 @@ class AppModel extends CI_Model {
     function getMoiveList() {
         return json_decode($this->str);
     }
-   
+
+    function getMoiveListByid($id) {
+        $json = json_decode($this->str);
+        
+        foreach ($json->movies as $movie) {
+            if ($movie->id == $id)
+                return $movie;
+        }
+    }
+
 }
