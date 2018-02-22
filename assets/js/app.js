@@ -44,7 +44,11 @@ $(document).ready(function () {
     });
 
    
+    $(document).on('change', '#genre', function () {
+        searchData = getSearchData();
+        load_movie_data(1, searchData[0], searchData[1]);
 
+    });
  
 
 });

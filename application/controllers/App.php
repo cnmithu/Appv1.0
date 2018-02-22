@@ -35,7 +35,7 @@ class App extends CI_Controller {
         $moviesList = $json->movies;
         $keys = array_keys($moviesList);
         $flag = false;
-        /* Start perform for filter movielist */
+        /* Perform for filter movielist */
         if (!empty($searchText)) {
             $flag = true;
             $searchText = preg_quote(strtolower($searchText), '~');
