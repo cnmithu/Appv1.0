@@ -13,7 +13,7 @@
     <body>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <h1 class="display-4">Movies Collection</h1>
+                <h1 class="display-4"><a href="<?php echo base_url(); ?>">Movies Collection</a></h1>
                 <p class="lead">Global Gaming – Application Challenge v1.0 </p>
             </div>
         </div>

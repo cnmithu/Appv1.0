@@ -17,9 +17,14 @@ $(document).ready(function () {
             dataType: "json",
             success: function (data)
             {
-                console.log(data);
-                $('#movieList').html(data.movieList);
-                $('#pagination_link').html(data.pagination_link);
+                if (data.status== true) {
+                    $('#movieList').html(data.movieList);
+                    $('#pagination_link').html(data.pagination_link);
+                } else {
+                    $('#movieList').html("<h3>"+data.message+"</h3>");
+                    $('#pagination_link').html("");
+                }
+
             }
         });
     }
@@ -37,10 +42,9 @@ $(document).ready(function () {
         load_movie_data(1, searchData[0], searchData[1]);
 
     });
-    $(document).on('change', '#genre', function () {
-        searchData = getSearchData();
-        load_movie_data(1, searchData[0], searchData[1]);
 
-    });
+   
+
+ 
 
 });
