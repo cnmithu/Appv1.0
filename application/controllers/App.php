@@ -18,6 +18,14 @@ class App extends CI_Controller {
         parent::__construct();
         $this->load->model('AppModel');
     }
+    
+    public function index() {
+        $data = [];
+        $json = $this->AppModel->getMoiveList();
+        $data['genres'] = $json->genres;
+        $data['contain'] = $this->load->view('home.php', $data, TRUE);
+        $this->load->view('index', $data);
+    }
 
    
 

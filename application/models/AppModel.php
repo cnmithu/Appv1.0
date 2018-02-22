@@ -18,5 +18,10 @@ class AppModel extends CI_Model {
         parent::__construct();
     }
 
+    function getMoiveList() {
+        $str = file_get_contents(base_url('db.json'));
+        return json_decode($str);
+    }
+
    
 }
